@@ -38,7 +38,7 @@ export async function downloadRepository(
   const archivePath = IS_WINDOWS
     ? path.join(repositoryPath, `${uniqueId}.zip`)
     : path.join(repositoryPath, `${uniqueId}.tar.gz`)
-  await fs.promises.writeFile(archivePath, archiveData)
+  await fs.promises.writeFile(archivePath, new Uint8Array(archiveData))
   archiveData = Buffer.from('') // Free memory
 
   // Extract archive

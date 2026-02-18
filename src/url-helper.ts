@@ -38,7 +38,7 @@ export function getServerApiUrl(url?: string): string {
 
   if (isGhes(url)) {
     const serverUrl = getServerUrl(url)
-    apiUrl = new URL(`${serverUrl.origin}/api/v3`).toString()
+    apiUrl = new URL(`${serverUrl.origin}/api/v1`).toString()
   }
 
   return apiUrl
